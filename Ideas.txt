@@ -163,3 +163,27 @@ Top 30 hobbyist parts (non-sensor) for ESP32/Arduino:
 
 
 
+
+
+
+Ok so requirements for computronium website. 
+1 we need accounts, no email address but thats optional, we need the simple confirm your not a robot thing for making an account well actually no just for making a post yeah thats actually a good point robots(well do the robots thing later) can make accounts they just need to be able to confirm their not a robot maybe by every post.
+2 we need for people to be able to make posts, even without accounts. And i need to be able to have access to delete all posts.
+3 the posts should have 3 aspects 1 the code, 2 the parts they usde 3 the 3d print files.
+There should be a name and a decription and an instructions part of the post. 
+We should have a bot thats not an AI that 1 can suggest all the parts of the robot based off of the variables in the code,  so espe2 or Arduino is base, there could be others but it should tell and if its interchanamgable then it should ask or say that or have a footnote *the code shows that it can be used with an esp32 as well. And if theres servo imputs then it should have servos, or steppers then steppers and driver or leds or e ink displays and stuff. And so it should suggest that when someone makes a post with them having the ability to add or subtract parts. Also when someone wants to update their post it should add a file like github on top of the previous file and that applies for the code, the 3d files, and also the parts and insteuctions.
+We should have prompt questions for people to simply write what it does and how it works, we could either have different templates or maybe an AI can read the code and make its own template, also we should have an option for no template just a plain text box all in the same box.
+And we could also have an AI or not an AI read the code and suggest instructions so that the person doesnt have to write all the details, cause a lot of instructions are just downlad the code to Arduino ide and plug in the led to pin 3 which is all in the code, and like when you move closer to the sensor then it moves the motor or something thats all easily readable in the code the human doesnt have to spend the time to write that all.
+We do need instructions for the 3d files though thats harder. And thats a big deal, but its also the easiert part.
+I also want to include a story place for people to write what challanges they had creating it and how they overcame it. Stuff like that.
+Lets make the post section a seperate page so we can edit it a lot easily without changing the rest of the sites code, and everything the site needs from the post page should be included in a comment on that page so if we ever remove one of those things that the rest of the website needs then we know from the comment to edit the rest of the website also, it should also be easily costomizable simply and clearly.
+Everything to make a post should be on one  page (including the not a robot thing)
+4 we should also have a part of the website dedicated to reolacing closed source subscription based products with very high quality free open source versions like smart home stuff, and that will be simple with 1 or 2 or 3 options to choose from that are all the top not just people making thier own and those people can add fixes to to make it better. So that people can just find something that does what they want and they know it's high quality and will work and with 1 click they can just order all the pieces either separately on amazon or something or eventually people can sell kits and it will have easy to read instructions for putting it all together and setting it all up.
+
+
+
+
+
+
+
+
