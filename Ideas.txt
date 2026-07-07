@@ -1,0 +1,165 @@
+(Claude please dont delete or edit this file, this is for me persoannly to document my thoughts)
+
+ok so what do we want? 
+
+we want 2 main things.
+1 a place for everyone to share their robotics projects, like github and makerworld but mainly for robotics.
+(hey maybe we can replace github cause they are sucking)
+2 an easy place for kids and non experienced people to download ready made robotics projects. 
+3 most robotics projects are extremely messy, and the other ones are ridiculous to setup, and also we want people who have no idea what their doing 
+to be able to upload and share and have others download their cool robots projects. Thats where the AI comes in. 
+
+we could also use mainly kits, to simplify things. 
+we mostly just need an ESP32, servo motors, stepper motors, (BLDC motors with FOCs and ESCs) and a range of sensors.
+
+i think most of the projects will use easy small cheap off the shelf stuff, were not trying to reinvent the wheel just give lots of people 
+access to tools that were very much out of their reach untill now. 
+
+there are 3 things, 1 the electronics, 2 the code, 3 the 3d model.
+
+the wbsite has to be factored in a way that all 3 are clear and prioritised, but also mostly the electronics and ESP32s. 
+
+we could lable things with rare parts, or new parts, most off the shelf sensors and motors dont need links, they are eaisily avalible, we just have to link 
+to them or sell kits but we could just link to amazon.
+
+we should make a list of all the motors and stuff and sensors and ESP32s and stuff like that, and then people can just checkbox selsct which ones they used. 
+im thinking this is way harder than it needs to be but really just like 3d printing its just putting the exact same stuff just in different forms.
+just different variations of putting motors and sensors together.
+a big big really big aspect of all of this is that 3d printing became accessable to all. that is a very very big deal. 
+
+it allows you to actually use the motors, and now everybody has one. 
+
+ok anyways also 3d prints will be different based on your stuff, so you need to be able to 3d design, well have to figure out something like that. 
+
+anyways what we should really have is maybe an AI or even not an AI that asks you questions on what it does and how it works. we can also have the AI have a setup guide. 
+
+we could also include videos of it working, that will be a quick way of us getting it setup. 
+
+im not exactly sure, i definitly got turned off when i tried to make a bambu handy posting, but im probably special and no one wants to use my models anyways lol. 
+
+anyways. 
+
+we need to make room for the professionals to upload it and the amatures to download it. 
+
+we simplified the hardware linking with checkbox lists 
+
+we can simplify the to do with questions.
+
+maybe we can have an AI go through the code and summerize it or document it or talk about what it does in very short and have the poster read it and write 
+comments and change it or just write thier own thing or have the AI ask questions. 
+
+the 3d models are gonna be hard, but 3d modeling is easy the hard part is creating and putting together the idea and the working parts of the robots. 
+
+we could also have "remixes" i like the idea if remixes instead of everybody making changes to it cause the original is the original and if anyone can make changes to it then the 
+person has to watch it and try it all and its just a stupid idea in general cause everyones gonna wanna costomize it for themselves and then its just gonna be for them, remixes are good. 
+
+we also need to have a lot of very simple explainers like what motors need a controller and whats the controller called and the difference between 3.3v and 5v 
+and how to connect and power an ESP32 and the difference between an ESP32 and an arduino and rasperry pi and how servos can just be plugged in but steppers need their own controller
+and a BLDC and an FOC and ESC and maybe VPSs or soemthing or a computer and sutff and i should also have an online compiler and an EZ E Ink display thing and an E Ink
+display size calculator for the numbers and stuff and maybe even a designer and lookup table and stuff, how to power ESP32s and solar pannels and battery chargers and external power suppoies and powering from the usb plug vs the 5v
+we dont want anyone going anywhere else for information or to buy things.
+we could also have an alternative to soldering section where we can list all the ways of alternatives to hardware stuff.
+weverything should be written clearly on our website our website should be the best way to start to get into robotics and we should sell kits, kits for robots and 
+general robotics sensors and motors and stuff kits.
+
+if some kid had a cool idea and went to our website they should find out very very quickly if thier idea is possible, if its a good idea, and what it would take to make it. thats a priority.
+
+we could have simple auto motorating with words and stuff that would get rid of like 99% of spam. no bad words. 
+we should also have requests for kids and stuff to share their cool robots ideas, maybe also a questions and answers place, we could ask them if their over 18 or something lol
+
+we also need to focus on being a place for professionals, github sucks and people are dying to leave it, makerworlds good though, but this would be sick and can be more professional. 
+
+ohh ohh ohh!!!! 
+first of all i can make also a scocail media where people can post their progress and challanges and stuff, that would be so so fun but most of all secondly i can have a place for popular trends that people are really super totally interested in and people can 
+link to and with just a few simple tools and steps people can replace all these things that they hate with open source self hosting versions!!!!!
+
+SMART HOME SYSTEM REPLACERS!!! I CAN HAVE A WHOLE SPECIAL SECTION FOR SMART HOMES AND I DONT HAVE TO ACTUALLY SELL ANYTHING JUST LINK TO ALL THE EXACT PRODUCTS WITH INSTRUCTIONS FOR WHY THESE ARE 
+NEEDED AND WHATS THE BEST AND WHATS THE DIFFERENCE AND WHY WERE USING IT, AND THEN IN 1 SINGLE BUTTON CLICK YOU COULD JUST BUY EVERYTHING YOU NEED FOR A SMART HOME THING LIKE SHADES OPENER OR INFRARED SENSOR OR BATTERIES
+OR LED LIGHTS AND IT SAYS THE ONES YOU NEED IN 1 CLICK WITH SIMPLE INSTRUCTIONS TO CONNECT IT EXACTLY LIKE A KIT AND EVERYTHING ELSE YOULL NEED LIKE A 3D PRINTER OR SOMETHING AND WE CAN LINK TO VENDORS THAT SELL THE PARTS
+AND ARDUINO IDE WITH LINKS TO DOWNLOAD OLDER VERSIONS AND COMMON BUGS PEOPLE COULD ASK AND IF MANY PEOPLE ASK OR IF MANY PEOPLE POST ABOUT IT THEN IT WILL BECOME A POINT IN THE SETUP INSTRUCTIONS.
+
+THE WHOLE POINT IS IS THAT IF SOMEONE BOUGHT A SMART HOME THING OR A SMART THERMOSTAT OR A SMART SHADES THING AND THEN COMPLAIN ABOUT THE PRICES GOING UP THEN SOMEONE CAN TELL THEM HEY WHY DONT YOU JUST GET ONE ON THIS SITE ITS ALL SELF HOSTED YOU JUST NEED TO PUT IT TOGETHER OR NO YOU DONT EVEN NEED TO!!!!! SO SO SO TOTALLY EPICCCCC!!!!
+
+WE COULD EVEN HAVE VENDORS SELLING PUT TOGETHER KITS!!!!!! WOULD BE SO TOTALLY EPIC A MARKET PLACE FOR ROBOTICS!!!!! SO SO SO SO EPIC!!!!!
+
+WE COULD TRY TO OPEN SOURCE BAMBU LABS 3D PRINTERS ON THERE TOO
+
+also we can have an art section too. but the main thing is the tippity top super simple alternatives for smart home systems and other self hosting things that you can build yourself.
+
+
+oh yeah for requirements we need to let people sign in with no email just account and password, with optional email and backup email, and also they can totally scroll without making an account 
+and mainly they can also post without making an account. 
+
+so like 6 things: 
+
+0 we need accounts no emails just usernames and passwords, also email, also no accounts and the ability to post without an account and they get a post password that they can delete or edit a post later if they want to edit a post without them actually having an account.
+
+1 we solved the uploading and documenting and linking all the hardware pieces with checkboxes of hardware stuff with 30 most common types of hardare, listed below
+
+2 we need a questions for what for them to write when they upload it for a simpler explainer, and maybe we can have an AI write a simple explination for what it is and does we could help them write it. and also a setup instrucions guid.hey maybe we can just ask them to send us the link to their github repo and we could just copy paste all the code thats a really super good idea
+we could also search for malware, otherwise we can have a copy paste thing or upload files thing. 
+
+3 we also need to have a place for the CAD files. we could also have tutorals and links to onshape and also links to sendcutsend advertisements and metal 3d printed stuff maybe if we want, and racknerd if we want too.
+
+4 and we need a subtle background AI for setup, and explination, and stuff like that. 
+
+5 we can have an algorithem like makerwold, a scocial media section or app like x hardware, a forum section like reddit for questions and ideas, and a whole set section for alternatives to no open source annoying subscription products, that will be a major banger.
+
+6 we can have people selling ready kits of put together open source hardare. 
+
+7 we need super easy explinations for everything, a kid should be able to read it anduniderstand if their idea is possible and get started on it, we need to say that Claude Fable 5 is the best model as of right now.
+
+put this intl Claude fable and ask it for similar things to encorporate and sfutff like that and other good ideas and themes and how to put it all together more simpley and what to remove maybe idk anyways good night. 
+
+
+
+Top 30 hobbyist parts (non-sensor) for ESP32/Arduino:
+
+**Displays & Indicators**
+1. 0.96" OLED display (SSD1306, I2C)
+2. 16x2 LCD with I2C backpack
+3. WS2812B / NeoPixel addressable LED strip
+4. 7-segment display module (TM1637)
+5. 8x8 LED matrix (MAX7219)
+6. Standard LEDs assortment + resistors
+
+**Motors & Movement**
+7. SG90 / MG90S micro servo
+8. 28BYJ-48 stepper motor + ULN2003 driver
+9. DC gear motors (TT motors)
+10. L298N or DRV8833 motor driver
+11. A4988 / TMC2208 stepper driver
+12. Vibration motor module
+
+**Power**
+13. Breadboard power supply module (MB102)
+14. 18650 battery holder + cells
+15. TP4056 lithium charging module
+16. Buck converter (LM2596)
+17. Boost converter (MT3608)
+18. AMS1117 3.3V regulator module
+
+**Input & Control**
+19. Tactile push buttons
+20. Rotary encoder module (KY-040)
+21. Potentiometers (10k)
+22. 4x4 membrane keypad
+23. Joystick module
+24. IR remote + receiver kit
+
+**Switching & Output**
+25. Relay module (1/2/4 channel)
+26. MOSFET module (IRF520)
+27. Passive/active buzzer
+28. Solid state relay (SSR)
+
+**Connectivity & Storage**
+29. MicroSD card reader module
+30. Logic level shifter (3.3V ↔ 5V)
+
+**Bonus essentials**
+- Breadboards, jumper wires, resistor kit, capacitor kit — the glue for everything above
+
+
+
+
