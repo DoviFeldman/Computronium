@@ -51,6 +51,7 @@ export type PostRow = {
   video_url: string | null;
   difficulty: Difficulty | null;
   advanced: boolean;
+  attempted: boolean;
   price_estimate: number | null;
   fork_of: string | null;
   fork_count: number;
@@ -83,6 +84,7 @@ export type PostInput = {
   videoUrl: string;
   difficulty: Difficulty | null;
   advanced: boolean;
+  attempted: boolean;
   priceEstimate: number | null;
   /** Ids from config/hardware.ts that the poster checked. */
   hardwareIds: string[];
@@ -98,6 +100,33 @@ export type PostInput = {
   }[];
 };
 
+/** One picture attached to a question or reply (path = storage path, for cleanup). */
+export type QuestionImage = {
+  url: string;
+  path: string | null;
+  filename: string | null;
+};
+
+/** A row in the `questions` table (the simple Q&A page). */
+export type QuestionRow = {
+  id: string;
+  owner_id: string | null; // null = asked anonymously
+  title: string;
+  body: string | null;
+  images: QuestionImage[];
+  created_at: string;
+};
+
+/** A row in `question_replies`. */
+export type QuestionReplyRow = {
+  id: string;
+  question_id: string;
+  owner_id: string | null; // null = replied anonymously
+  body: string | null;
+  images: QuestionImage[];
+  created_at: string;
+};
+
 /** Slimmed-down post shape the feed API returns for each card. */
 export type FeedPost = {
   id: string;
@@ -105,6 +134,7 @@ export type FeedPost = {
   description: string | null;
   difficulty: Difficulty | null;
   advanced: boolean;
+  attempted: boolean;
   price_estimate: number | null;
   video_url: string | null;
   hardwareIds: string[];

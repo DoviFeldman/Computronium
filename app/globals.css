@@ -319,6 +319,26 @@ pre.code-block {
   white-space: nowrap;
 }
 
+/* ---------- questions page (/questions) ---------- */
+.q-list-item {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  color: inherit;
+}
+.q-list-item:hover { border-color: var(--accent); text-decoration: none; }
+.q-list-item .q-title { font-weight: 700; margin: 0 0 4px; }
+.q-thread-img {
+  display: block;
+  max-width: 100%;
+  max-height: 360px;
+  border-radius: var(--radius);
+  margin-top: 10px;
+}
+
 /* ---------- learn page ---------- */
 .explainer {
   background: var(--surface);

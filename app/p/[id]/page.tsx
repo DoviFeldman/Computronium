@@ -52,6 +52,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
       <h1>{post.name}</h1>
       <p className="muted" style={{ marginTop: 0 }}>
         <DifficultyDot difficulty={post.difficulty} withLabel />{" "}
+        {post.attempted && <>· 🧪 <Link href="/attempted">attempted build</Link> </>}
         {post.price_estimate != null && <>· ~${Number(post.price_estimate)} in parts </>}
         {post.owner ? (
           <>· by <Link href={`/u/${post.owner.username}`}>@{post.owner.username}</Link></>

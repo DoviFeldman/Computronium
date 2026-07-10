@@ -19,6 +19,8 @@ export default async function Header() {
         </Link>
         <nav className="nav">
           <Link href="/">Projects</Link>
+          <Link href="/attempted">Attempted Builds</Link>
+          <Link href="/questions">Questions</Link>
           <Link href="/learn">Learn</Link>
           <Link href="/advanced">Advanced</Link>
           <Link href="/liberated">{site.liberated.title}</Link>

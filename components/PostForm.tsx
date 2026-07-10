@@ -16,6 +16,8 @@
  *   - difficulty  → the feed filter, the card dots, AND 'red' auto-routes
  *                   posts to /advanced (lib/posts.ts inputToPostColumns)
  *   - advanced    → what /advanced shows
+ *   - attempted   → what /attempted shows (attempted builds are HIDDEN from
+ *                   the main feed — see app/api/posts/route.ts)
  *   - hardwareIds → feed chips, the parts filter, featured-board filter row
  *                   (ids must exist in config/hardware.ts)
  *   - priceEstimate → the cost-bracket filter + "~$" on cards
@@ -61,6 +63,7 @@ export default function PostForm({
   const [videoUrl, setVideoUrl] = useState("");
   const [difficulty, setDifficulty] = useState<Difficulty | null>(null);
   const [advanced, setAdvanced] = useState(false);
+  const [attempted, setAttempted] = useState(false);
   const [price, setPrice] = useState("");
 
   // ---- code ----------------------------------------------------------------
@@ -115,6 +118,7 @@ export default function PostForm({
       setVideoUrl(post.video_url ?? "");
       setDifficulty(post.difficulty ?? null);
       setAdvanced(Boolean(post.advanced));
+      setAttempted(Boolean(post.attempted));
       setPrice(post.price_estimate != null ? String(post.price_estimate) : "");
       setChecked(
         post.post_hardware.filter((h: { hardware_id: string | null }) => h.hardware_id)
@@ -270,6 +274,7 @@ export default function PostForm({
       videoUrl,
       difficulty,
       advanced,
+      attempted,
       priceEstimate: price.trim() === "" ? null : parseFloat(price) || null,
       hardwareIds: checked,
       customHardware: customRows.map((r) => ({
@@ -659,6 +664,14 @@ export default function PostForm({
             <input type="checkbox" checked={advanced} onChange={(e) => setAdvanced(e.target.checked)} />
             <span>Flag as advanced anyway (even if not 🔴)</span>
           </label>
+          <label className="hw-option" style={{ paddingLeft: 0 }}>
+            <input type="checkbox" checked={attempted} onChange={(e) => setAttempted(e.target.checked)} />
+            <span>🧪 This is an attempted build (didn&apos;t fully work / gave up / in progress)</span>
+          </label>
+          <p className="hint">
+            Attempted builds show on the <Link href="/attempted">Attempted Builds page</Link>{" "}
+            instead of the main feed.
+          </p>
         </div>
         <div className="field">
           <label>Estimated total cost ($)</label>

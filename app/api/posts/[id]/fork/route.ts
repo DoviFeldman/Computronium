@@ -44,6 +44,7 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
       video_url: original.video_url,
       difficulty: original.difficulty,
       advanced: original.advanced,
+      attempted: original.attempted,
       price_estimate: original.price_estimate,
       fork_of: original.id,
     })

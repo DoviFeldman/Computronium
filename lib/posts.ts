@@ -113,6 +113,7 @@ export function toFeedPost(row: PostFull): FeedPost {
     description: row.description,
     difficulty: row.difficulty,
     advanced: row.advanced,
+    attempted: row.attempted,
     price_estimate: row.price_estimate,
     video_url: row.video_url,
     hardwareIds: (row.post_hardware ?? [])
@@ -143,6 +144,8 @@ export function inputToPostColumns(input: PostInput): Partial<PostRow> {
     difficulty: input.difficulty,
     // 🔴 difficulty automatically counts as advanced → shows on /advanced.
     advanced: input.advanced || input.difficulty === "red",
+    // Attempted builds show on /attempted INSTEAD of the main feed.
+    attempted: input.attempted,
     price_estimate: input.priceEstimate,
   };
 }

@@ -39,6 +39,7 @@ create table if not exists public.posts (
   video_url text,
   difficulty text check (difficulty in ('green','yellow','red')),
   advanced boolean not null default false,     -- true → also shown on /advanced
+  attempted boolean not null default false,    -- true → shown on /attempted INSTEAD of the main feed
   price_estimate numeric,
   fork_of uuid references public.posts (id) on delete set null,
   fork_count integer not null default 0,
@@ -50,6 +51,9 @@ create table if not exists public.posts (
   current_version integer not null default 1,
   created_at timestamptz not null default now()
 );
+
+-- Added later — this upgrades databases created before the Attempted Builds page.
+alter table public.posts add column if not exists attempted boolean not null default false;
 
 create index if not exists posts_created_at_idx on public.posts (created_at desc);
 create index if not exists posts_owner_idx on public.posts (owner_id);
@@ -102,6 +106,36 @@ create table if not exists public.post_files (
 create index if not exists post_files_post_idx on public.post_files (post_id);
 
 -- ---------------------------------------------------------------------------
+-- QUESTIONS — the simple Q&A page (/questions).
+-- A question is just text + optional pictures; images is a jsonb array of
+-- { url, path, filename } objects (path = storage path, for cleanup).
+-- ---------------------------------------------------------------------------
+create table if not exists public.questions (
+  id uuid primary key default gen_random_uuid(),
+  owner_id uuid references public.profiles (id) on delete set null,  -- null = anonymous
+  title text not null,
+  body text,
+  images jsonb not null default '[]'::jsonb,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists questions_created_at_idx on public.questions (created_at desc);
+
+-- ---------------------------------------------------------------------------
+-- QUESTION_REPLIES — answers under a question. Same shape: text + pictures.
+-- ---------------------------------------------------------------------------
+create table if not exists public.question_replies (
+  id uuid primary key default gen_random_uuid(),
+  question_id uuid not null references public.questions (id) on delete cascade,
+  owner_id uuid references public.profiles (id) on delete set null,  -- null = anonymous
+  body text,
+  images jsonb not null default '[]'::jsonb,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists question_replies_question_idx on public.question_replies (question_id);
+
+-- ---------------------------------------------------------------------------
 -- STORAGE BUCKET — public bucket for images / small STL / code uploads.
 -- The storage adapter (lib/storage.ts) reads and writes this bucket.
 -- ---------------------------------------------------------------------------
@@ -125,6 +159,8 @@ alter table public.posts enable row level security;
 alter table public.post_versions enable row level security;
 alter table public.post_hardware enable row level security;
 alter table public.post_files enable row level security;
+alter table public.questions enable row level security;
+alter table public.question_replies enable row level security;
 
 drop policy if exists "public read profiles" on public.profiles;
 create policy "public read profiles" on public.profiles for select using (true);
@@ -140,3 +176,9 @@ create policy "public read hardware" on public.post_hardware for select using (t
 
 drop policy if exists "public read files" on public.post_files;
 create policy "public read files" on public.post_files for select using (true);
+
+drop policy if exists "public read questions" on public.questions;
+create policy "public read questions" on public.questions for select using (true);
+
+drop policy if exists "public read question replies" on public.question_replies;
+create policy "public read question replies" on public.question_replies for select using (true);

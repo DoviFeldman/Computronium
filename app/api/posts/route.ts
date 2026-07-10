@@ -9,7 +9,8 @@
  *          cost       a bracket id from config/site.ts (e.g. "10to25")
  *          parts      comma-separated hardware ids (must have ALL of them)
  *          video      "1" = only posts with a video link
- *          scope      "main" (default, everything) | "advanced" (advanced only)
+ *          scope      "main" (default, everything except attempted builds)
+ *                     | "advanced" (advanced only) | "attempted" (attempted only)
  *          offset     for paging
  *
  * POST — create a post (from the Post form).
@@ -54,6 +55,9 @@ export async function GET(request: Request) {
     .select(POST_SELECT)
     .order("created_at", { ascending: false })
     .limit(500);
+  // Attempted builds live ONLY on /attempted — every other scope hides them.
+  if (scope === "attempted") query = query.eq("attempted", true);
+  else query = query.eq("attempted", false);
   if (scope === "advanced") query = query.eq("advanced", true);
 
   const { data, error } = await query;

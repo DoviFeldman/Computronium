@@ -14,6 +14,8 @@ Built with **Next.js (App Router)** + **Supabase** (free tier), deploys on the
 | Page | URL | What it is |
 |---|---|---|
 | Main feed | `/` | Endless-scroll project grid, hot-ranked, search + filters |
+| Attempted Builds | `/attempted` | Same grid, but for builds that didn't (fully) work — posts land here (instead of the main feed) when "attempted build" is ticked on the form |
+| Questions | `/questions` | Dead-simple Q&A: text questions + pictures, anyone can reply (also with pictures) |
 | Learn | `/learn` | Honest hardware explainers (all from `config/explainers.ts`) |
 | Advanced | `/advanced` | Showcase of 🔴-difficulty / advanced-flagged builds |
 | Personal page | `/u/username` | A user's profile + posts. **The only place with a New Post button** |
@@ -46,7 +48,9 @@ so you can poke at the UI before setting up Supabase.
 2. **Run the schema:** open your project → *SQL Editor* → *New query* →
    paste ALL of [`supabase/schema.sql`](supabase/schema.sql) → **Run**.
    This creates the tables, the public storage bucket, and the security
-   policies. (Safe to re-run any time.)
+   policies. (Safe to re-run any time — and you SHOULD re-run it after
+   pulling updates that add tables/columns, e.g. the Attempted Builds
+   flag and the Questions tables.)
 3. **Turn off email confirmation:** *Authentication → Sign In / Up → Email* →
    disable **"Confirm email"**. Accounts here are username-only — the
    synthesized emails can't receive mail, so confirmation must be off.

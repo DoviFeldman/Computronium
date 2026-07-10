@@ -2,7 +2,8 @@
 
 /**
  * The endless-scroll project feed with search + filters.
- * Used by the main page (scope="main") and /advanced (scope="advanced").
+ * Used by the main page (scope="main"), /advanced (scope="advanced"),
+ * and /attempted (scope="attempted").
  *
  * How it works:
  *  - Filters/search live in React state; changing any of them refetches
@@ -38,7 +39,7 @@ const EMPTY_FILTERS: Filters = {
   videoOnly: false,
 };
 
-export default function Feed({ scope }: { scope: "main" | "advanced" }) {
+export default function Feed({ scope }: { scope: "main" | "advanced" | "attempted" }) {
   const [filters, setFilters] = useState<Filters>(EMPTY_FILTERS);
   const [posts, setPosts] = useState<FeedPost[]>([]);
   const [hasMore, setHasMore] = useState(true);
@@ -216,7 +217,9 @@ export default function Feed({ scope }: { scope: "main" | "advanced" }) {
 
       {posts.length === 0 && !loading && (
         <p className="center muted" style={{ padding: "48px 0" }}>
-          No projects here yet. {scope === "main" && "Be the first — make a personal page and post one!"}
+          {scope === "attempted"
+            ? "No attempted builds yet. Tried something that didn't quite work? Post it — tick “attempted build” on the form."
+            : `No projects here yet. ${scope === "main" ? "Be the first — make a personal page and post one!" : ""}`}
         </p>
       )}
       {loading && <p className="center muted">Loading…</p>}
